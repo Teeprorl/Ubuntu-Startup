@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#####################################################################################################################
+# This file is used to configure an ubuntu terminal. La dernière version de ce projet sera utilsable lors de 
+# l'installation du subsystem ubuntu. Pour l`instant seul le fichier demubu.sh est utilisable avec le `dot slash`
+# Exemple ./demubu.sh
+#####################################################################################################################
 
 # variable
 declare subs
@@ -21,8 +26,6 @@ mount -t drvfs F: /mnt/f
 
 # edit of files properties
 sed -i -e "s/# set linenumbers/ set linenumbers/" /etc/nanorc
-sed -i -e "s/# /$subs/" /etc/crontab
-sed -e -i "s/#force_color_prompt/ force_color_prompt/" /home/roamy/.bashrc
-sed -e -t "s/#force_color_prompt/ force_color_prompt/" /root/.bashrc
-
-
+sed -i -e "s/^#$/$subs/" /etc/crontab
+sed -i -e "s/#force_color_prompt/ force_color_prompt/" /home/roamy/.bashrc
+sed -i -e "s/#force_color_prompt/ force_color_prompt/" /root/.bashrc
