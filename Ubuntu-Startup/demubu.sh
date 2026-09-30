@@ -3,7 +3,7 @@
 
 # variable
 declare subs
-subs="30 *   * * * root		cp /mnt/c/Users/roamy/Temp/* /mnt/f/log/ && rm -rf /mnt/c/Users/roamy/Temp/* /etc/crontab"
+subs="30 *    * * * root		cp \/mnt\/c\/Users\/roamy\/Temp\/* \/mnt\/f\/log\/ && rm -rf \/mnt\/c\/Users\/roamy\/Temp\/*"
 
 # had to be root to use the following commands
 systemctl enable systemd-networkd
@@ -21,7 +21,7 @@ mount -t drvfs F: /mnt/f
 
 # edit of files properties
 sed -i -e "s/# set linenumbers/ set linenumbers/" /etc/nanorc
-#grep -o "#" /etc/crontab | tail -1 | sed -i -e "s/#/$subs/"  /etc/crontab
+sed -i -e "s/# /$subs/" /etc/crontab
 sed -e -i "s/#force_color_prompt/ force_color_prompt/" /home/roamy/.bashrc
 sed -e -t "s/#force_color_prompt/ force_color_prompt/" /root/.bashrc
 
