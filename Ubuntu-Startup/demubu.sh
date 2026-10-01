@@ -14,11 +14,17 @@ subs="30 *    * * * root		cp \/mnt\/c\/Users\/roamy\/Temp\/* \/mnt\/f\/log\/ && 
 systemctl enable systemd-networkd
 
 # apt database update
-apt update -y 1>/dev/null 2>/dev/null && apt upgrade -y 2>/dev/null 2>/dev/null
-apt install tree plocate gitk -y 1>/dev/null 2>/dev/null
+apt update -y 1>/dev/null 2>/dev/null && apt upgrade -y 1>/dev/null 2>/dev/null
+apt install tree gitk gh -y 1>/dev/null 2>/dev/null
 
-cd /
-clear
+# inclure le montage du disque externe dans le fichier source correspondant
+tee -a /etc/bash.bashrc 1>/dev/null << EOF
+mount -t drvfs F: /mnt/f
+EOF
+
+tee -a /home/roamy/.bashrc 1>/dev/null << EOF
+mount -t drvfs F: /mnt/f
+EOF
 
 # acces to the an usb key
 mkdir -p -m 755 /mnt/f
