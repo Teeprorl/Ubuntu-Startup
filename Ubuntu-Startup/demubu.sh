@@ -11,7 +11,7 @@ declare subs
 subs="30 *    * * * root		cp \/mnt\/c\/Users\/roamy\/Temp\/* \/mnt\/f\/log\/ && rm -rf \/mnt\/c\/Users\/roamy\/Temp\/*"
 
 # had to be root to use the following commands
-systemctl enable systemd-networkd
+# systemctl enable systemd-networkd
 
 # apt database update
 apt update -y 1>/dev/null 2>/dev/null && apt upgrade -y 1>/dev/null 2>/dev/null
