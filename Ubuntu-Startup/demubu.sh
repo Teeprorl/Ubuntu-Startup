@@ -15,7 +15,7 @@ subs="30 *    * * * root		cp \/mnt\/c\/Users\/roamy\/Temp\/* \/mnt\/f\/log\/ && 
 
 # apt database update
 apt update -y 1>/dev/null 2>/dev/null && apt upgrade -y 1>/dev/null 2>/dev/null
-apt install tree gitk gh -y 1>/dev/null 2>/dev/null
+apt install tree plocate gitk gh apt-utils -y 1>/dev/null 2>/dev/null
 
 # inclure le montage du disque externe dans le fichier source correspondant
 tee -a /etc/bash.bashrc 1>/dev/null << EOF
