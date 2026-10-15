@@ -25,7 +25,7 @@ apt update -y 1>/dev/null 2>/dev/null && apt upgrade -y 1>/dev/null 2>/dev/null
 chargement #download progress statement
 
 # apt package installation
-apt install tree plocate gitk gh apt-utils -y 1>/dev/null 2>/dev/null
+apt install tree plocate gitk gh apt-utils iasl -y 1>/dev/null 2>/dev/null
 
 cd /
 clear
